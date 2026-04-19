@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Dani Setiawan — Front-End Developer & Designer based in Bandung, Indonesia. Crafting modern, interactive web experiences with clean code and stunning design.">
+    <meta name="keywords"
+        content="Dani Setiawan, Front-End Developer, Designer, Portfolio, Web Developer, Bandung, Indonesia">
+    <meta name="author" content="Dani Setiawan">
+    <title>Dani Setiawan — Front-End Developer & Designer</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- LOADING SCREEN                              -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-ring"></div>
+            <span class="loader-text">OPENED</span>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- ANIMATED BACKGROUND PARTICLES               -->
+    <!-- ═══════════════════════════════════════════ -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CUSTOM CURSOR                               -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- NAVIGATION BAR                              -->
+    <!-- ═══════════════════════════════════════════ -->
+    <header id="navbar" class="navbar">
+        <div class="container navbar-inner">
+            <a href="#hero" class="logo" id="nav-logo">
+                <span class="logo-bracket"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-book-open-text-icon lucide-book-open-text">
+                        <path d="M12 7v14" />
+                        <path d="M16 12h2" />
+                        <path d="M16 8h2" />
+                        <path
+                            d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
+                        <path d="M6 12h2" />
+                        <path d="M6 8h2" />
+                    </svg></span> Dani Setiawan <span class="logo-bracket"></span>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+                <a href="#about" class="nav-link" data-section="about">About</a>
+                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HERO SECTION                                -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="hero" class="hero section">
+        <div class="container hero-grid">
+            <!-- Left: Text Content -->
+            <div class="hero-content" data-reveal="left">
+                <p class="hero-greeting">
+                    <span class="wave"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-bell-ring-icon lucide-bell-ring">
+                            <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+                            <path d="M22 8c0-2.3-.8-4.3-2-6" />
+                            <path
+                                d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+                            <path d="M4 2C2.8 3.7 2 5.7 2 8" />
+                        </svg></span> Hello, I'm
+                </p>
+                <h1 class="hero-name">
+                    Dani <span class="accent">Setiawan</span>
+                </h1>
+                <div class="hero-title-wrapper">
+                    <span class="hero-title-prefix">&gt;</span>
+                    <span class="typewriter" id="typewriter"></span>
+                    <span class="typewriter-cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    Crafting modern, interactive web experiences with clean code
+                    and stunning design. Based in Bandung, Indonesia.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary" id="hero-cta-hire">
+                        <i data-lucide="send" class="btn-icon"></i>
+                        Hire Me
+                    </a>
+                    <a href="#projects" class="btn btn-outline" id="hero-cta-projects">
+                        <i data-lucide="folder-open" class="btn-icon"></i>
+                        View Projects
+                    </a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/danisetiawan889" target="_blank" class="social-link" id="social-github"
+                        aria-label="GitHub">
+                        <i class="fa-brands fa-github fa-2x"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/dani-setiawan-649695367" target="_blank" class="social-link"
+                        id="social-linkedin" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin fa-2x"></i>
+                    </a>
+                    <a href="https://www.instagram.com/and.dnnii_/" target="_blank" class="social-link"
+                        id="social-instagram" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="https://t.me/IHsZe" target="_blank" class="social-link" id="social-dribbble"
+                        aria-label="Dribbble">
+                        <i class="fa-brands fa-telegram fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Profile Photo -->
+            <div class="hero-image" data-reveal="right">
+                <div class="image-wrapper">
+                    <div class="image-glow"></div>
+                    <div class="image-border-animation"></div>
+                    <img src="assets/img/potocopy.jpeg" alt="Dani Setiawan — Front-End Developer & Designer"
+                        class="profile-photo" id="profile-photo">
+                </div>
+                <!-- Floating badges -->
+                <div class="floating-badge badge-1" data-reveal="fade">
+                    <i data-lucide="code-2"></i>
+                    <span>Developer</span>
+                </div>
+                <div class="floating-badge badge-2" data-reveal="fade">
+                    <i data-lucide="palette"></i>
+                    <span>Designer</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator" id="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- ABOUT SECTION                               -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-header" data-reveal="up">
+                <span class="section-tag">&lt;about&gt;</span>
+                <h2 class="section-title">About <span class="accent">Me</span></h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text" data-reveal="left">
+                    <p>
+                        I'm a passionate <strong>Front-End Developer & Designer</strong> based in
+                        <span class="accent">Bandung, Indonesia</span>. With a solid background in
+                        Programming and Design, I specialize in creating beautiful, functional,
+                        and user-centered digital experiences.
+                    </p>
+                    <p>
+                        I believe great design goes beyond aesthetics — it solves problems,
+                        creates connections, and drives results. Whether it's developing responsive
+                        web interfaces or crafting intuitive UI/UX, I bring both technical skills
+                        and creative vision to every project.
+                    </p>
+                    <p>
+                        When I'm not coding, you'll find me exploring new design trends,
+                        learning emerging web technologies, or contributing to the local tech community.
+                    </p>
+                </div>
+
+                <div class="about-cards" data-reveal="right">
+                    <div class="info-card glass-card">
+                        <div class="info-card-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <div class="info-card-content">
+                            <span class="info-label">Location</span>
+                            <span class="info-value">Bandung, Indonesia</span>
+                        </div>
+                    </div>
+                    <div class="info-card glass-card">
+                        <div class="info-card-icon">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+                        <div class="info-card-content">
+                            <span class="info-label">Education</span>
+                            <span class="info-value">Programming & Design</span>
+                        </div>
+                    </div>
+                    <div class="info-card glass-card">
+                        <div class="info-card-icon">
+                            <i data-lucide="briefcase"></i>
+                        </div>
+                        <div class="info-card-content">
+                            <span class="info-label">Status</span>
+                            <span class="info-value">Open for Opportunities</span>
+                        </div>
+                    </div>
+                    <div class="info-card glass-card">
+                        <div class="info-card-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <div class="info-card-content">
+                            <span class="info-label">Specialty</span>
+                            <span class="info-value">UI/UX & Front-End</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- SKILLS SECTION                              -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <div class="section-header" data-reveal="up">
+                <span class="section-tag">&lt;skills&gt;</span>
+                <h2 class="section-title">My <span class="accent">Skills</span></h2>
+                <p class="section-subtitle">Technologies & tools I work with</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Technical Skills -->
+                <div class="skills-column" data-reveal="left">
+                    <h3 class="skills-category-title">
+                        <i data-lucide="code-2"></i> Technical Skills
+                    </h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML5</span>
+                            <span class="skill-percent">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">CSS3 / SCSS</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">UI/UX Design</span>
+                            <span class="skill-percent">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Basic Frameworks</span>
+                            <span class="skill-percent">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="70"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Other Skills -->
+                <div class="skills-column" data-reveal="right">
+                    <h3 class="skills-category-title">
+                        <i data-lucide="wrench"></i> Tools & Other Skills
+                    </h3>
+                    <div class="tool-cards">
+                        <div class="tool-card glass-card">
+                            <i data-lucide="image"></i>
+                            <span>Photoshop</span>
+                        </div>
+                        <div class="tool-card glass-card">
+                            <i data-lucide="layout-template"></i>
+                            <span>Canva</span>
+                        </div>
+                        <div class="tool-card glass-card">
+                            <i data-lucide="video"></i>
+                            <span>Video Editing</span>
+                        </div>
+                        <div class="tool-card glass-card">
+                            <i data-lucide="puzzle"></i>
+                            <span>Problem Solving</span>
+                        </div>
+                        <div class="tool-card glass-card">
+                            <i data-lucide="clock"></i>
+                            <span>Good Time Manage</span>
+                        </div>
+                        <div class="tool-card glass-card">
+                            <i data-lucide="message-circle"></i>
+                            <span>stay focused while working</span>
+                        </div>
+                        <div class="tool-card glass-card">
+                            <i data-lucide="refresh-cw"></i>
+                            <span>Adaptability</span>
+                        </div>
+                        <div class="tool-card glass-card">
+                            <i data-lucide="users"></i>
+                            <span>Teamwork</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- EXPERIENCE SECTION                          -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="experience" class="experience section">
+        <div class="container">
+            <div class="section-header" data-reveal="up">
+                <span class="section-tag">&lt;experience&gt;</span>
+                <h2 class="section-title">My <span class="accent">Experience</span></h2>
+                <p class="section-subtitle">Professional journey so far</p>
+            </div>
+
+            <div class="timeline" data-reveal="up">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i data-lucide="briefcase"></i>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <span class="timeline-date">
+                                <i data-lucide="calendar"></i>
+                                2024 — Present
+                            </span>
+                            <span class="timeline-badge">Internship</span>
+                        </div>
+                        <h3 class="timeline-title">Front-End Developer</h3>
+                        <h4 class="timeline-company">
+                            <i data-lucide="building-2"></i>
+                            DPMPTSP Kabupaten Bandung
+                        </h4>
+                        <ul class="timeline-details">
+                            <li>
+                                <i data-lucide="check-circle-2"></i>
+                                Implemented UI/UX designs into responsive web interfaces
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2"></i>
+                                Optimized website performance and loading speed
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2"></i>
+                                Integrated RESTful APIs for dynamic data handling
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2"></i>
+                                Collaborated with cross-functional teams on project deliverables
+                            </li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">API Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <span class="timeline-date">
+                                <i data-lucide="calendar"></i>
+                                2021 — 2024
+                            </span>
+                            <span class="timeline-badge edu">Education</span>
+                        </div>
+                        <h3 class="timeline-title">Programming & Design</h3>
+                        <h4 class="timeline-company">
+                            <i data-lucide="school"></i>
+                            Vocational High School — Bandung
+                        </h4>
+                        <ul class="timeline-details">
+                            <li>
+                                <i data-lucide="check-circle-2"></i>
+                                Studied programming fundamentals and web development
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2"></i>
+                                Learned graphic design principles and tools
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2"></i>
+                                Completed various personal and academic projects
+                            </li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">Web Dev</span>
+                            <span class="tag">Design</span>
+                            <span class="tag">Programming</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PROJECTS SECTION                            -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <div class="section-header" data-reveal="up">
+                <span class="section-tag">&lt;projects&gt;</span>
+                <h2 class="section-title">My <span class="accent">Projects</span></h2>
+                <p class="section-subtitle">Featured work & creations</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="project-filters" data-reveal="up">
+                <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+                <button class="filter-btn" data-filter="web" id="filter-web">Web</button>
+                <button class="filter-btn" data-filter="design" id="filter-design">Design</button>
+                <button class="filter-btn" data-filter="app" id="filter-app">App</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card glass-card" data-category="web" data-reveal="up"
+                    data-title="E-Commerce Dashboard"
+                    data-desc="Modern admin dashboard with real-time analytics, chart visualizations, and responsive design. Built with vanilla HTML, CSS, and JavaScript, this project features interactive data charts, a clean sidebar navigation, order management views, and a fully responsive layout that adapts seamlessly across devices."
+                    data-tech="HTML,CSS,JavaScript" data-demo="#" data-source="#" data-image-class="">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i data-lucide="globe"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-view-btn">
+                                <i data-lucide="eye"></i>
+                                View
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">E-Commerce Dashboard</h3>
+                        <p class="project-desc">Modern admin dashboard with real-time analytics, chart visualizations,
+                            and responsive design.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card glass-card" data-category="design" data-reveal="up"
+                    data-title="Mobile App UI Kit"
+                    data-desc="Complete UI kit for a fitness mobile application with 30+ screens and dark/light themes. This comprehensive design system includes onboarding flows, workout tracking interfaces, nutrition logging, social community features, progress analytics, and a fully interactive Figma prototype for user testing."
+                    data-tech="Figma,UI/UX,Prototyping" data-demo="#" data-source="#" data-image-class="placeholder-2">
+                    <div class="project-image">
+                        <div class="project-image-placeholder placeholder-2">
+                            <i data-lucide="smartphone"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-view-btn">
+                                <i data-lucide="eye"></i>
+                                View
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Mobile App UI Kit</h3>
+                        <p class="project-desc">Complete UI kit for a fitness mobile application with 30+ screens and
+                            dark/light themes.</p>
+                        <div class="project-tech">
+                            <span>Figma</span>
+                            <span>UI/UX</span>
+                            <span>Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card glass-card" data-category="web" data-reveal="up"
+                    data-title="Weather Forecast App"
+                    data-desc="Real-time weather application with location detection, weekly forecasts, and animated conditions. Features include automatic geolocation, a 7-day extended forecast, hourly breakdowns, wind speed and humidity indicators, UV index warnings, and smooth animated weather condition icons that change dynamically."
+                    data-tech="JavaScript,API,CSS3" data-demo="#" data-source="#" data-image-class="placeholder-3">
+                    <div class="project-image">
+                        <div class="project-image-placeholder placeholder-3">
+                            <i data-lucide="layout-dashboard"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-view-btn">
+                                <i data-lucide="eye"></i>
+                                View
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Weather Forecast App</h3>
+                        <p class="project-desc">Real-time weather application with location detection, weekly forecasts,
+                            and animated conditions.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>API</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card glass-card" data-category="app" data-reveal="up" data-title="Chat Application"
+                    data-desc="Real-time messaging platform with group chats, emoji support, and file sharing capabilities. This full-stack application features WebSocket-powered instant messaging, user authentication, typing indicators, read receipts, media sharing with preview, group chat management, and a sleek dark-themed interface."
+                    data-tech="JavaScript,WebSocket,Node.js" data-demo="#" data-source="#"
+                    data-image-class="placeholder-4">
+                    <div class="project-image">
+                        <div class="project-image-placeholder placeholder-4">
+                            <i data-lucide="message-square"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-view-btn">
+                                <i data-lucide="eye"></i>
+                                View
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Chat Application</h3>
+                        <p class="project-desc">Real-time messaging platform with group chats, emoji support, and file
+                            sharing capabilities.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>WebSocket</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 5 -->
+                <div class="project-card glass-card" data-category="design" data-reveal="up"
+                    data-title="Brand Identity Design"
+                    data-desc="Complete brand identity including logo, color palette, typography, and marketing materials. This project involved creating a cohesive visual identity from scratch — starting with mood boards, sketching logo concepts, defining a color system, selecting typefaces, and producing business cards, letterheads, social media templates, and brand guideline documentation."
+                    data-tech="Photoshop,Illustrator,Branding" data-demo="project-modal-image" data-source="#"
+                    data-image-class="placeholder-5">
+                    <div class="project-image">
+                        <div class="project-image-placeholder placeholder-5">
+                            <i data-lucide="pen-tool"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-view-btn">
+                                <i data-lucide="eye"></i>
+                                View
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Brand Identity Design</h3>
+                        <p class="project-desc">Complete brand identity including logo, color palette, typography, and
+                            marketing materials.</p>
+                        <div class="project-tech">
+                            <span>Photoshop</span>
+                            <span>Illustrator</span>
+                            <span>Branding</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 6 -->
+                <div class="project-card glass-card" data-category="web" data-reveal="up"
+                    data-title="Portfolio Website v2"
+                    data-desc="Previous iteration of my personal portfolio with glassmorphism design and smooth animations. This website showcases my projects and skills with a modern dark theme, particle background effects, scroll-triggered animations, a typewriter hero section, interactive project filtering, and a fully responsive layout optimized for all screen sizes."
+                    data-tech="HTML,CSS,JavaScript" data-demo="#" data-source="#" data-image-class="placeholder-6">
+                    <div class="project-image">
+                        <div class="project-image-placeholder placeholder-6">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-view-btn">
+                                <i data-lucide="eye"></i>
+                                View
+                            </span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Portfolio Website v2</h3>
+                        <p class="project-desc">Previous iteration of my personal portfolio with glassmorphism design
+                            and smooth animations.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CONTACT SECTION                             -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header" data-reveal="up">
+                <span class="section-tag">&lt;contact&gt;</span>
+                <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+                <p class="section-subtitle">Let's build something amazing together</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info" data-reveal="left">
+                    <h3 class="contact-heading">Let's Talk</h3>
+                    <p class="contact-text">
+                        I'm always open to new opportunities and collaborations.
+                        Whether you have a project idea, a question, or just want to say hi —
+                        feel free to reach out!
+                    </p>
+
+                    <div class="contact-cards">
+                        <a href="mailto:setiawandanni22@gmail.com" class="contact-card glass-card" id="contact-email">
+                            <div class="contact-card-icon">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">setiawandanni22@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+6281216973665" class="contact-card glass-card" id="contact-phone">
+                            <div class="contact-card-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">+62 812-1697-3665</span>
+                            </div>
+                        </a>
+                        <div class="contact-card glass-card" id="contact-location">
+                            <div class="contact-card-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">Bandung, Indonesia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="contact-socials">
+                        <a href="https://github.com/danisetiawan889 target=" _blank" class="contact-social-link"
+                            aria-label="GitHub">
+                            <i class="fa-brands fa-github 2x"></i>
+                        </a>
+                        <a href="https://linkedin.com/www.dani-setiawan-649695367" target="_blank"
+                            class="contact-social-link" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin 2x"></i>
+                        </a>
+                        <a href="https://instagram.com/and.dnnii_" target="_blank" class="contact-social-link"
+                            aria-label="Instagram">
+                            <i class="fa-brands fa-instagram 2x"></i>
+                        </a>
+                        <a href="https://twitter.com/IHsZe" target="_blank" class="contact-social-link"
+                            aria-label="Twitter">
+                            <i class="fa-brands fa-twitter 2x"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="contact-form glass-card" data-reveal="right" id="contact-form">
+                    <div class="form-group">
+                        <label for="form-name">Full Name</label>
+                        <div class="input-wrapper">
+                            <i data-lucide="user"></i>
+                            <input type="text" id="form-name" name="name" placeholder="John Doe" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-email">Email Address</label>
+                        <div class="input-wrapper">
+                            <i data-lucide="mail"></i>
+                            <input type="email" id="form-email" name="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-subject">Subject</label>
+                        <div class="input-wrapper">
+                            <i data-lucide="tag"></i>
+                            <input type="text" id="form-subject" name="subject" placeholder="Project Inquiry" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-message">Message</label>
+                        <div class="input-wrapper textarea-wrapper">
+                            <i data-lucide="message-square"></i>
+                            <textarea id="form-message" name="message" rows="5"
+                                placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit" id="form-submit">
+                        <i data-lucide="send" class="btn-icon"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- FOOTER                                      -->
+    <!-- ═══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="#hero" class="footer-logo">
+                <i class="fa-solid fa-shield fa-2x"> ds</i>
+            </a>
+            <p class="footer-text">
+                &copy; 2026 Dani Setiawan. Crafted with
+                <span class="accent">&hearts;</span>
+                in Bandung.
+            </p>
+            <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Back to top">
+                <i data-lucide="arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PROJECT DETAIL MODAL                       -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="project-modal-overlay" id="project-modal-overlay">
+        <div class="project-modal" id="project-modal">
+            <button class="project-modal-close" id="project-modal-close" aria-label="Close project detail">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="project-modal-image" id="project-modal-image"></div>
+            <div class="project-modal-body">
+                <div class="project-modal-category" id="project-modal-category"></div>
+                <h2 class="project-modal-title" id="project-modal-title"></h2>
+                <p class="project-modal-desc" id="project-modal-desc"></p>
+                <div class="project-modal-tech" id="project-modal-tech"></div>
+                <div class="project-modal-actions">
+                    <a href="#" class="btn btn-primary" id="project-modal-demo" target="_blank">
+                        <i data-lucide="external-link" class="btn-icon"></i>
+                        Live Demo
+                    </a>
+                    <a href="#" class="btn btn-outline" id="project-modal-source" target="_blank">
+                        <i data-lucide="github" class="btn-icon"></i>
+                        Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Script -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

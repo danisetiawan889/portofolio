@@ -468,27 +468,72 @@
         }
     });
 
-    // ─── CONTACT FORM ───────────────────────────────
+    // ─── CONTACT FORM (sends a real email via FormSubmit) ──
     const contactForm = $('#contact-form');
+    const formStatus = $('#form-status');
+
+    // Destination email — messages submitted through the form arrive here.
+    // NOTE: the very first submission triggers a one-time confirmation email
+    // from FormSubmit to this address; it must be confirmed once before
+    // further messages get delivered.
+    const CONTACT_EMAIL = 'setiawandanni22@gmail.com';
+    const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
+
+    function setFormStatus(message, type) {
+        if (!formStatus) return;
+        formStatus.textContent = message;
+        formStatus.classList.remove('success', 'error');
+        if (type) formStatus.classList.add(type);
+    }
 
     if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+        contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const submitBtn = this.querySelector('.btn-submit');
             const originalContent = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i data-lucide="check-circle" class="btn-icon"></i> Message Sent!';
-            submitBtn.classList.add('btn-success');
+
+            // Basic honeypot check (anti-spam field, should stay empty)
+            const honey = this.querySelector('[name="_honey"]');
+            if (honey && honey.value) {
+                return; // silently drop likely bot submissions
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i data-lucide="loader" class="btn-icon"></i> Sending...';
+            setFormStatus('', null);
+            if (window.lucide) lucide.createIcons();
+
+            try {
+                const formData = new FormData(this);
+                const response = await fetch(FORM_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Request failed with status ' + response.status);
+                }
+
+                submitBtn.innerHTML = '<i data-lucide="check-circle" class="btn-icon"></i> Message Sent!';
+                submitBtn.classList.add('btn-success');
+                setFormStatus('Thanks! Your message has been sent — I\'ll get back to you soon.', 'success');
+                this.reset();
+            } catch (err) {
+                submitBtn.innerHTML = '<i data-lucide="alert-circle" class="btn-icon"></i> Failed to Send';
+                setFormStatus('Something went wrong sending your message. Please try emailing me directly at ' + CONTACT_EMAIL + '.', 'error');
+            }
 
             if (window.lucide) lucide.createIcons();
 
-            // Reset after 3 seconds
+            // Reset button after a few seconds
             setTimeout(() => {
                 submitBtn.innerHTML = originalContent;
                 submitBtn.classList.remove('btn-success');
+                submitBtn.disabled = false;
                 if (window.lucide) lucide.createIcons();
-                this.reset();
-            }, 3000);
+            }, 3500);
         });
     }
 

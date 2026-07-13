@@ -826,6 +826,10 @@ textarea {
     color: var(--text-primary);
 }
 
+.about-cv-btn {
+    margin-top: 8px;
+}
+
 .about-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1223,7 +1227,9 @@ textarea {
 }
 
 .project-image-placeholder.placeholder-5 {
-    background: linear-gradient(135deg, #1a1a0f, #2e1f0f);
+    background-image: url(../assets/img/design-grafis.png);
+    background-size: cover;
+    background-position: center;
 }
 
 .project-image-placeholder.placeholder-6 {
@@ -1751,6 +1757,22 @@ body.modal-open {
     justify-content: center;
     padding: 16px;
     font-size: 1rem;
+}
+
+.form-status {
+    margin-top: 14px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    min-height: 1.2em;
+    text-align: center;
+}
+
+.form-status.success {
+    color: var(--success);
+}
+
+.form-status.error {
+    color: #ff6b6b;
 }
 
 

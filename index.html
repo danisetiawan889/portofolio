@@ -203,6 +203,10 @@
                         When I'm not coding, you'll find me exploring new design trends,
                         learning emerging web technologies, or contributing to the local tech community.
                     </p>
+                    <a href="#" class="btn btn-outline about-cv-btn" id="about-cv-btn" download>
+                        <i data-lucide="file-down" class="btn-icon"></i>
+                        Download CV
+                    </a>
                 </div>
 
                 <div class="about-cards" data-reveal="right">
@@ -322,6 +326,10 @@
                             <span>Photoshop</span>
                         </div>
                         <div class="tool-card glass-card">
+                            <i data-lucide="layers"></i>
+                            <span>Photopea</span>
+                        </div>
+                        <div class="tool-card glass-card">
                             <i data-lucide="layout-template"></i>
                             <span>Canva</span>
                         </div>
@@ -367,6 +375,51 @@
             </div>
 
             <div class="timeline" data-reveal="up">
+                <!-- Timeline Item 0 (Newest) -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i data-lucide="palette"></i>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <span class="timeline-date">
+                                <i data-lucide="calendar"></i>
+                                2026 — Present
+                            </span>
+                            <span class="timeline-badge">Freelance</span>
+                        </div>
+                        <h3 class="timeline-title">Graphic Designer & Print-on-Demand Uploader</h3>
+                        <h4 class="timeline-company">
+                            <i data-lucide="building-2"></i>
+                            DNMR
+                        </h4>
+                        <ul class="timeline-details">
+                            <li>
+                                <i data-lucide="check-circle-2"></i>
+                                Designed a wide range of graphic artwork for print-on-demand merchandise
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2"></i>
+                                Uploaded and managed hundreds of designs on Teepublic.com
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2"></i>
+                                Researched trending niches and optimized listings for better visibility
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2"></i>
+                                Maintained consistent design output and quality across a growing catalog
+                            </li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">Photoshop</span>
+                            <span class="tag">Photopea</span>
+                            <span class="tag">Teepublic</span>
+                            <span class="tag">Print on Demand</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Timeline Item 1 -->
                 <div class="timeline-item">
                     <div class="timeline-dot">
@@ -722,7 +775,14 @@
                 </div>
 
                 <!-- Contact Form -->
-                <form class="contact-form glass-card" data-reveal="right" id="contact-form">
+                <form class="contact-form glass-card" data-reveal="right" id="contact-form"
+                    action="https://formsubmit.co/setiawandanni22@gmail.com" method="POST">
+                    <!-- FormSubmit configuration (works even if JavaScript is disabled) -->
+                    <input type="hidden" name="_subject" value="New message from Portfolio Contact Form">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
                     <div class="form-group">
                         <label for="form-name">Full Name</label>
                         <div class="input-wrapper">
@@ -756,6 +816,7 @@
                         <i data-lucide="send" class="btn-icon"></i>
                         Send Message
                     </button>
+                    <p class="form-status" id="form-status"></p>
                 </form>
             </div>
         </div>

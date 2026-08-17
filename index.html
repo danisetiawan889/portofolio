@@ -24,7 +24,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -69,12 +69,28 @@
                     </svg></span> Dani Setiawan <span class="logo-bracket"></span>
             </a>
             <nav class="nav-links" id="nav-links">
-                <a href="#hero" class="nav-link active" data-section="hero">Home</a>
-                <a href="#about" class="nav-link" data-section="about">About</a>
-                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
-                <a href="#experience" class="nav-link" data-section="experience">Experience</a>
-                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                <span class="nav-menu-title">Menu</span>
+                <a href="#hero" class="nav-link active" data-section="hero">
+                    <i data-lucide="home" class="nav-link-icon"></i> Home
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <i data-lucide="user" class="nav-link-icon"></i> About
+                </a>
+                <a href="#skills" class="nav-link" data-section="skills">
+                    <i data-lucide="code-2" class="nav-link-icon"></i> Skills
+                </a>
+                <a href="#experience" class="nav-link" data-section="experience">
+                    <i data-lucide="briefcase" class="nav-link-icon"></i> Experience
+                </a>
+                <a href="#gallery" class="nav-link" data-section="gallery">
+                    <i data-lucide="camera" class="nav-link-icon"></i> Gallery
+                </a>
+                <a href="#projects" class="nav-link" data-section="projects">
+                    <i data-lucide="folder-open" class="nav-link-icon"></i> Projects
+                </a>
+                <a href="#contact" class="nav-link" data-section="contact">
+                    <i data-lucide="send" class="nav-link-icon"></i> Contact
+                </a>
             </nav>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
                 <span class="bar"></span>
@@ -112,8 +128,8 @@
                     <span class="typewriter-cursor">|</span>
                 </div>
                 <p class="hero-description">
-                    Crafting modern, interactive web experiences with clean code
-                    and stunning design. Based in Bandung, Indonesia.
+                    Front-end developer who also enjoys design and illustration work.
+                    Based in Bandung, Indonesia — always learning and improving.
                 </p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary" id="hero-cta-hire">
@@ -188,22 +204,22 @@
             <div class="about-grid">
                 <div class="about-text" data-reveal="left">
                     <p>
-                        I'm a passionate <strong>Front-End Developer & Designer</strong> based in
-                        <span class="accent">Bandung, Indonesia</span>. With a solid background in
-                        Programming and Design, I specialize in creating beautiful, functional,
-                        and user-centered digital experiences.
+                        I'm a <strong>Front-End Developer</strong> based in
+                        <span class="accent">Bandung, Indonesia</span>, still learning and growing
+                        in this field. Besides programming, I also work in
+                        <strong>design and illustration</strong> — two areas I enjoy and try to
+                        keep improving separately.
                     </p>
                     <p>
-                        I believe great design goes beyond aesthetics — it solves problems,
-                        creates connections, and drives results. Whether it's developing responsive
-                        web interfaces or crafting intuitive UI/UX, I bring both technical skills
-                        and creative vision to every project.
+                        In programming, I focus on building simple, functional web interfaces.
+                        In design and illustration, I'm a bit more comfortable and usually get
+                        better results, since it's the area I've spent more time practicing.
                     </p>
                     <p>
-                        When I'm not coding, you'll find me exploring new design trends,
-                        learning emerging web technologies, or contributing to the local tech community.
+                        When I'm not working on either one, I like exploring new design trends
+                        and slowly learning new things about web development.
                     </p>
-                    <a href="../assets/img/dani_setiawan_cv.pdf" class="btn btn-outline about-cv-btn" id="about-cv-btn" download>
+                    <a href="assets/img/dani_setiawan_cv.pdf" class="btn btn-outline about-cv-btn" id="about-cv-btn" download="Dani_Setiawan_CV.pdf">
                         <i data-lucide="file-down" class="btn-icon"></i>
                         Download CV
                     </a>
@@ -243,7 +259,7 @@
                         </div>
                         <div class="info-card-content">
                             <span class="info-label">Specialty</span>
-                            <span class="info-value">UI/UX & Front-End</span>
+                            <span class="info-value">Programming & Design/Illustration</span>
                         </div>
                     </div>
                 </div>
@@ -263,32 +279,14 @@
             </div>
 
             <div class="skills-grid">
-                <!-- Technical Skills -->
+                <!-- Programming Skills -->
                 <div class="skills-column" data-reveal="left">
                     <h3 class="skills-category-title">
-                        <i data-lucide="code-2"></i> Technical Skills
+                        <i data-lucide="code-2"></i> Programming
                     </h3>
                     <div class="skill-item">
                         <div class="skill-header">
                             <span class="skill-name">HTML5</span>
-                            <span class="skill-percent">95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="95"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">CSS3 / SCSS</span>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="90"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">JavaScript</span>
                             <span class="skill-percent">85%</span>
                         </div>
                         <div class="skill-bar">
@@ -297,29 +295,48 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span class="skill-name">UI/UX Design</span>
-                            <span class="skill-percent">88%</span>
+                            <span class="skill-name">CSS3 / SCSS</span>
+                            <span class="skill-percent">80%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-progress="88"></div>
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percent">45%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="45"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-header">
                             <span class="skill-name">Basic Frameworks</span>
-                            <span class="skill-percent">70%</span>
+                            <span class="skill-percent">60%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-progress="70"></div>
+                            <div class="skill-progress" data-progress="60"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Design & Illustration</span>
+                            <span class="skill-percent">78%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="78"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tools & Other Skills -->
+                <!-- Design, Illustration & Tools -->
                 <div class="skills-column" data-reveal="right">
                     <h3 class="skills-category-title">
                         <i data-lucide="wrench"></i> Tools & Other Skills
                     </h3>
+                    
                     <div class="tool-cards">
                         <div class="tool-card glass-card">
                             <i data-lucide="image"></i>
@@ -503,9 +520,68 @@
                             <span class="tag">Programming</span>
                         </div>
                     </div>
-
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- GALLERY SECTION                             -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="gallery" class="gallery section">
+        <div class="container">
+            <div class="section-header" data-reveal="up">
+                <span class="section-tag">&lt;gallery&gt;</span>
+                <h2 class="section-title">A Few <span class="accent">Moments</span></h2>
+                <p class="section-subtitle">Some snapshots from work along the way</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item glass-card" data-reveal="flip">
+                    <div class="gallery-photo">
+                        <img src="assets/img/dpmptsp.jpeg" alt="Presenting a project update at DPMPTSP Kabupaten Bandung"
+                            loading="lazy" onerror="this.remove()">
+                        <i data-lucide="camera"></i>
+                    </div>
+                    <div class="gallery-caption">
+                        <div class="gallery-caption-title">Working</div>
+                        <div class="gallery-caption-sub">DPMPTSP Kabupaten Bandung</div>
+                    </div>
+                </div>
+                <div class="gallery-item glass-card" data-reveal="flip">
+                    <div class="gallery-photo">
+                        <img src="assets/img/present.jpeg" alt="Working on a project at the office"
+                            loading="lazy" onerror="this.remove()">
+                        <i data-lucide="camera"></i>
+                    </div>
+                    <div class="gallery-caption">
+                        <div class="gallery-caption-title">Presentation</div>
+                        <div class="gallery-caption-sub">DNMR Office</div>
+                    </div>
+                </div>
+                <div class="gallery-item glass-card" data-reveal="flip">
+                    <div class="gallery-photo">
+                        <img src="assets/img/coacing.jpeg" alt="Team discussion session"
+                            loading="lazy" onerror="this.remove()">
+                        <i data-lucide="camera"></i>
+                    </div>
+                    <div class="gallery-caption">
+                        <div class="gallery-caption-title">Coaching</div>
+                        <div class="gallery-caption-sub">psychology Manipulation</div>
+                    </div>
+                </div>
+                <div class="gallery-item glass-card" data-reveal="flip">
+                    <div class="gallery-photo">
+                        <img src="assets/img/photoo.jpeg" alt="Team discussion session"
+                            loading="lazy" onerror="this.remove()">
+                        <i data-lucide="camera"></i>
+                    </div>
+                    <div class="gallery-caption">
+                        <div class="gallery-caption-title">Photos</div>
+                        <div class="gallery-caption-sub">DNMR Office</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -527,6 +603,7 @@
                 <button class="filter-btn" data-filter="web" id="filter-web">Web</button>
                 <button class="filter-btn" data-filter="design" id="filter-design">Design</button>
                 <button class="filter-btn" data-filter="app" id="filter-app">App</button>
+                <button class="filter-btn" data-filter="game" id="filter-game">Game</button>
             </div>
 
             <div class="projects-grid">
@@ -587,13 +664,13 @@
                 </div>
 
                 <!-- Project Card 3 -->
-                <div class="project-card glass-card" data-category="web" data-reveal="up"
-                    data-title="Weather Forecast App"
-                    data-desc="Real-time weather application with location detection, weekly forecasts, and animated conditions. Features include automatic geolocation, a 7-day extended forecast, hourly breakdowns, wind speed and humidity indicators, UV index warnings, and smooth animated weather condition icons that change dynamically."
-                    data-tech="JavaScript,API,CSS3" data-demo="#" data-source="#" data-image-class="placeholder-3">
+                <div class="project-card glass-card" data-category="game" data-reveal="up"
+                    data-title="2D Platformer Game"
+                    data-desc="A 2D platformer game built with Godot Engine, featuring physics-based player movement, hazards like lava and spikes, arrow traps, and a heart-based health system. All character and environment assets — sprites, tiles, and animations — were hand-drawn as pixel art using Aseprite. This project was where I learned about scene structure, collision/area detection, simple trap AI, and save/load systems in Godot."
+                    data-tech="Godot Engine,GDScript,Aseprite" data-demo="#" data-source="#" data-image-class="placeholder-3">
                     <div class="project-image">
                         <div class="project-image-placeholder placeholder-3">
-                            <i data-lucide="layout-dashboard"></i>
+                            <i data-lucide="gamepad-2"></i>
                         </div>
                         <div class="project-overlay">
                             <span class="project-view-btn">
@@ -603,21 +680,23 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">Weather Forecast App</h3>
-                        <p class="project-desc">Real-time weather application with location detection, weekly forecasts,
-                            and animated conditions.</p>
+                        <h3 class="project-title">2D Platformer Game</h3>
+                        <p class="project-desc">A 2D platformer made in Godot Engine with hazard-based gameplay
+                            (lava, spikes, traps) and pixel art assets I made myself in Aseprite.</p>
                         <div class="project-tech">
-                            <span>JavaScript</span>
-                            <span>API</span>
-                            <span>CSS3</span>
+                            <span>Godot Engine</span>
+                            <span>GDScript</span>
+                            <span>Aseprite</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project Card 4 -->
                 <div class="project-card glass-card" data-category="app" data-reveal="up" data-title="Chat Application"
-                    data-desc="Real-time messaging platform with group chats, emoji support, and file sharing capabilities. This full-stack application features WebSocket-powered instant messaging, user authentication, typing indicators, read receipts, media sharing with preview, group chat management, and a sleek dark-themed interface."
-                    data-tech="JavaScript,WebSocket,Node.js" data-demo="#" data-source="#"
+                    data-desc="FinTrack is a personal finance management application designed to help users record, track, and calculate their income and expenses each month. The application provides a simple dashboard that displays total income, total expenses, remaining balance, and savings in an easy-to-understand format.
+
+FinTrack also includes features for organizing expenses by category, viewing transaction history, setting savings targets, and monitoring monthly budget progress. With its modern and user-friendly interface, FinTrack helps users better understand their financial situation, control their spending, and manage their monthly finances more effectively."
+                    data-tech="HTML,CSS,Local Storage" data-demo="#" data-source="#"
                     data-image-class="placeholder-4">
                     <div class="project-image">
                         <div class="project-image-placeholder placeholder-4">
@@ -631,13 +710,12 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">Chat Application</h3>
-                        <p class="project-desc">Real-time messaging platform with group chats, emoji support, and file
-                            sharing capabilities.</p>
+                        <h3 class="project-title">FinTrack Application</h3>
+                        <p class="project-desc">Personal finance management application for tracking monthly income, expenses, savings, and remaining balance.</p>
                         <div class="project-tech">
-                            <span>JavaScript</span>
-                            <span>WebSocket</span>
-                            <span>Node.js</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Local Storage</span>
                         </div>
                     </div>
                 </div>

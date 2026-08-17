@@ -1367,7 +1367,7 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../assets/img/finance-dashboard.png);
+    background-image: url(../assets/img/finance.png);
     background-size: cover;
     background-position: center;
 }
